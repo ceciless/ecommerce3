@@ -1,0 +1,18 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: veloCOmotion
+    database_user: root
+    database_password: 1234567890
+    mailer_transport: smtp
+    mailer_host: 'localhost:1025'
+    mailer_user: null   
+    mailer_password: null
+    secret: aea6a6f6474b29b6245d6dfcd2a641986c3b0f8f
+
+twig:
+    globals:
+        telephone: 06 50 60 29 75
+        email: sisi.ren@ensta-bretagne.org
+        adresse: Brest 29200 - 2 rue Francois Verny 

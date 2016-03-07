@@ -1,0 +1,101 @@
+<?php
+
+/* FOSUserBundle:Profile:show_content.html.twig */
+class __TwigTemplate_68693f199c520c7d55895c3b1894e492731be2b27d5e15e94a7c8d4d3c5d8d71 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_9b009d59357a5d9ef746560c5b4ee2193786e8ad41d50b6f93aa5bdc3d349901 = $this->env->getExtension("native_profiler");
+        $__internal_9b009d59357a5d9ef746560c5b4ee2193786e8ad41d50b6f93aa5bdc3d349901->enter($__internal_9b009d59357a5d9ef746560c5b4ee2193786e8ad41d50b6f93aa5bdc3d349901_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
+
+        // line 1
+        echo "   ";
+        // line 2
+        echo "
+    <div class=\"row\">
+        <div class=\"span3\">
+             ";
+        // line 5
+        $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig", "FOSUserBundle:Profile:show_content.html.twig", 5)->display($context);
+        // line 6
+        echo "        </div>
+        <div class=\"span9\">
+            <h2>Mes informations</h2>
+            <div id=\"collapseOne\" class=\"accordion-body collapse in\">
+                <div class=\"accordion-inner\">
+                    
+                    <div class=\"span4\">
+                        <h4>Mes informations</h4>
+      \t        <p>";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("profile.show.username", array(), "FOSUserBundle"), "html", null, true);
+        echo ": ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array()), "html", null, true);
+        echo "</p>
+    \t        <p>";
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("profile.show.email", array(), "FOSUserBundle"), "html", null, true);
+        echo ": ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array()), "html", null, true);
+        echo "</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+";
+        
+        $__internal_9b009d59357a5d9ef746560c5b4ee2193786e8ad41d50b6f93aa5bdc3d349901->leave($__internal_9b009d59357a5d9ef746560c5b4ee2193786e8ad41d50b6f93aa5bdc3d349901_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "FOSUserBundle:Profile:show_content.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  47 => 15,  41 => 14,  31 => 6,  29 => 5,  24 => 2,  22 => 1,);
+    }
+}
+/*    {% trans_default_domain 'FOSUserBundle' %}*/
+/* */
+/*     <div class="row">*/
+/*         <div class="span3">*/
+/*              {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}*/
+/*         </div>*/
+/*         <div class="span9">*/
+/*             <h2>Mes informations</h2>*/
+/*             <div id="collapseOne" class="accordion-body collapse in">*/
+/*                 <div class="accordion-inner">*/
+/*                     */
+/*                     <div class="span4">*/
+/*                         <h4>Mes informations</h4>*/
+/*       	        <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>*/
+/*     	        <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>*/
+/*                     </div>*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/*     </div>*/
+/* */
+/* */
+/* */
