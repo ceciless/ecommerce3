@@ -22,16 +22,23 @@
                     <p>{{ velo.description }}</p>
                     <p>{{ velo.position }}</p>
                     <h4>{{ velo.prix | tva(velo.tva.multiplicate) }}€/jour</h4>
-                    <form action="panier.php">
-
-                        <select name="qte" class="span1">
-                            <option>1jour</option>
-                        </select>
-
-                        <div>
-                            <button class="btn btn-primary">Réserver</button>
-                        </div>
-                    </form>
+                    {% if panier[velo.id] is not defined %}
+                        <form action="{{ path('ajouter', { 'id': velo.id })}}" method= "get">
+                            <select name="qte" class="span1">
+                                    {% for i in 1..15%}
+                                        <option value="{{ i }}">{{ i }} </option>
+                                    {% endfor %}
+                            </select>
+                            <td>jours</td>
+                            <div>
+                                <button class="btn btn-primary">Réserver</button>
+                            </div>
+                        </form>
+                    {% else %}
+                         <div>
+                            <a href= " " class="btn btn-primary">Vous avez déja choisi ce vélo.</a>
+                         </div>
+                    {% endif %}
 
                 </div>
             </div>

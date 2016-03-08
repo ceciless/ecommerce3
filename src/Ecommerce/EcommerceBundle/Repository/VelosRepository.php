@@ -12,6 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class VelosRepository extends EntityRepository
 {
+	public function findArray($array)
+	{
+		$qb=$this ->createQueryBuilder('u')
+			->select('u')
+			->where('u.id IN (:array)')
+			->setParameter('array',$array);
+		return $qb->getQuery() ->getResult();	
+	}
 
 	public function byCategorie($categorie)
 	{

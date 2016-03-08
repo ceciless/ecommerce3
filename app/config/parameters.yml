@@ -1,5 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
+    database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: null
     database_name: veloCOmotion
@@ -9,6 +10,7 @@ parameters:
     mailer_host: 'localhost:1025'
     mailer_user: null   
     mailer_password: null
+    locale: fr
     secret: aea6a6f6474b29b6245d6dfcd2a641986c3b0f8f
 
 twig:

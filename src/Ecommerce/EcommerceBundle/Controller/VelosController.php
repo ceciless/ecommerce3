@@ -20,19 +20,32 @@ class VelosController extends Controller
 
     public function velosAction()
     {
+        $session = $this->getRequest() -> getSession();
         $em = $this->getDoctrine()->getManager();
         $velos = $em->getRepository('EcommerceBundle:Velos')->findBy(array('disponible' => 1 ));
-        return $this->render('EcommerceBundle:Default:velos/layout/velos.html.twig', array('velos' => $velos));
+        if ($session->has('panier'))
+            $panier = $session->get('panier');
+        else
+            $panier=false;
+
+        return $this->render('EcommerceBundle:Default:velos/layout/velos.html.twig', array('velos' => $velos,
+                                                                                                                                                                                'panier' => $panier));
     }
 
     public function presentationAction($id)
     {
+        $session = $this->getRequest() -> getSession();
         $em = $this->getDoctrine()->getManager();
         $velo = $em->getRepository('EcommerceBundle:Velos')->find($id);
         
          if (!$velo) throw $this->createNotFoundException('La page \'existe pas.');
+         if ($session->has('panier'))
+            $panier = $session->get('panier');
+        else                
+            $panier=false;
 
-        return $this->render('EcommerceBundle:Default:velos/layout/presentation.html.twig', array('velo' => $velo));
+        return $this->render('EcommerceBundle:Default:velos/layout/presentation.html.twig', array('velo' => $velo,
+                                                                                                                                                                                                'panier' => $panier));
     }
 
     public function rechercheAction()

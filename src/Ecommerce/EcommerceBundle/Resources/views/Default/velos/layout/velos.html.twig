@@ -27,7 +27,9 @@
                                 <h4>{{velo.velonom}}</h4>
                                 <p>{{velo.prix | tva(velo.tva.multiplicate) }}€/jour</p>
                                 <a class="btn btn-primary" href="{{ path('presentation',  { 'id' : velo.id }) }}">Plus d'infos</a>
-                                <a class="btn btn-success" href="{{ path('panier') }}">Réserver </a>
+                                {% if panier[velo.id] is not defined %}
+                                    <a class="btn btn-success" href="{{ path('ajouter', {'id' : velo.id }) }}">Réserver </a>
+                                {% endif %}
                             </div>
                         </div>
                     </li>

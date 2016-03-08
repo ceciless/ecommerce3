@@ -1,6 +1,14 @@
+supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: EcommerceBundle:Panier:supprimer}
+
+ajouter:
+    path:     /ajouter/{id}
+    defaults: { _controller: EcommerceBundle:Panier:ajouter}
+
 panier:
     path:     /
-    defaults: { _controller: EcommerceBundle:Panier:panier }
+    defaults: { _controller: EcommerceBundle:Panier:panier}
 
 livraison:
     path:    /livraison
