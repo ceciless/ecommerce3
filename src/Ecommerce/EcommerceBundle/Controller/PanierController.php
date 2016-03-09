@@ -16,6 +16,7 @@ class PanierController extends Controller
          {
                 unset($panier[$id]);
                 $session->set('panier', $panier);
+                $this->get('session')->getFlashBag()->add('success','Reserve supprime avec succes');
          }
           return $this->redirect($this->generateUrl('panier'));
     }
@@ -34,14 +35,17 @@ class PanierController extends Controller
         if (array_key_exists($id, $panier)){
                 if ($this->getRequest()->query->get('qte') !=null) 
                         $panier[$id] = $this->getRequest()->query->get('qte');
+                        $this->get('session')->getFlashBag()->add('success','Reserve change avec succes');
             }
         else{
                  if($this->getRequest()->query->get('qte') !=null)
                         $panier[$id] = $this->getRequest()->query->get('qte');
                  else
                         $panier[$id] = 1;
+                $this->get('session')->getFlashBag()->add('success','Reserve ajoute avec succes');
         }
         $session->set('panier', $panier);
+ 
 
         return $this->redirect($this->generateUrl('panier'));
     }
