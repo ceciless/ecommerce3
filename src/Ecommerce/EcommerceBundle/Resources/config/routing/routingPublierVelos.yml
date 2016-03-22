@@ -1,0 +1,24 @@
+publierVelos_index:
+    path:     /
+    defaults: { _controller: "EcommerceBundle:publierVelos:index" }
+    methods:  GET
+
+publierVelos_show:
+    path:     /{id}/show
+    defaults: { _controller: "EcommerceBundle:publierVelos:show" }
+    methods:  GET
+
+publierVelos_new:
+    path:     /new
+    defaults: { _controller: "EcommerceBundle:publierVelos:new" }
+    methods:  [GET, POST]
+
+publierVelos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EcommerceBundle:publierVelos:edit" }
+    methods:  [GET, POST]
+
+publierVelos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EcommerceBundle:publierVelos:delete" }
+    methods:  DELETE

@@ -8,6 +8,11 @@
 
         <div class="span3">
             {% include '::modulesUsed/navigation.html.twig' %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+            {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+            {% endif %}
         </div>
 
         <div class="span9">
@@ -26,7 +31,7 @@
                         <form action="{{ path('ajouter', { 'id': velo.id })}}" method= "get">
                             <select name="qte" class="span1">
                                     {% for i in 1..15%}
-                                        <option value="{{ i }}">{{ i }} </option>
+                                        <option value="{{ i }}">{{ i }}</option>
                                     {% endfor %}
                             </select>
                             <td>jours</td>

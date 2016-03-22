@@ -293,11 +293,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\PanierController::panierAction',  '_route' => 'panier',);
                 }
 
-                // livraison
-                if ($pathinfo === '/panier/livraison') {
-                    return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\PanierController::livraisonAction',  '_route' => 'livraison',);
-                }
-
                 // validation
                 if ($pathinfo === '/panier/validation') {
                     return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\PanierController::validationAction',  '_route' => 'validation',);
@@ -329,6 +324,85 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // rechercheVelos
         if ($pathinfo === '/recherche') {
             return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\VelosController::rechercheTraitementAction',  '_route' => 'rechercheVelos',);
+        }
+
+        if (0 === strpos($pathinfo, '/utilisateurprofile')) {
+            // utilisateurprofile
+            if (rtrim($pathinfo, '/') === '/utilisateurprofile') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'utilisateurprofile');
+                }
+
+                return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\UtilisateursProfilesController::utilisateurprofileAction',  '_route' => 'utilisateurprofile',);
+            }
+
+            // profilesuppression
+            if (0 === strpos($pathinfo, '/utilisateurprofile/suppression') && preg_match('#^/utilisateurprofile/suppression/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'profilesuppression')), array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\UtilisateursProfilesController::profilesuppressionAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/publiervelos')) {
+            // publierVelos_index
+            if (rtrim($pathinfo, '/') === '/publiervelos') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_publierVelos_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'publierVelos_index');
+                }
+
+                return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\publierVelosController::indexAction',  '_route' => 'publierVelos_index',);
+            }
+            not_publierVelos_index:
+
+            // publierVelos_show
+            if (preg_match('#^/publiervelos/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_publierVelos_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'publierVelos_show')), array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\publierVelosController::showAction',));
+            }
+            not_publierVelos_show:
+
+            // publierVelos_new
+            if ($pathinfo === '/publiervelos/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_publierVelos_new;
+                }
+
+                return array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\publierVelosController::newAction',  '_route' => 'publierVelos_new',);
+            }
+            not_publierVelos_new:
+
+            // publierVelos_edit
+            if (preg_match('#^/publiervelos/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_publierVelos_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'publierVelos_edit')), array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\publierVelosController::editAction',));
+            }
+            not_publierVelos_edit:
+
+            // publierVelos_delete
+            if (preg_match('#^/publiervelos/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_publierVelos_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'publierVelos_delete')), array (  '_controller' => 'Ecommerce\\EcommerceBundle\\Controller\\publierVelosController::deleteAction',));
+            }
+            not_publierVelos_delete:
+
         }
 
         // homepage

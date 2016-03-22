@@ -15,8 +15,8 @@ class __TwigTemplate_87f580daa4e4000f7e85e7125f1021be6361bcf580799ce7c109b80cada
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1bc306c317d2fbedee509ce2fb7471c1c791d4fdbb524350edea6b84f2b1e1ae = $this->env->getExtension("native_profiler");
-        $__internal_1bc306c317d2fbedee509ce2fb7471c1c791d4fdbb524350edea6b84f2b1e1ae->enter($__internal_1bc306c317d2fbedee509ce2fb7471c1c791d4fdbb524350edea6b84f2b1e1ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig"));
+        $__internal_9ab150100e7cd638ebc8339c1b7c9e862aee6695a132072b87f58d8e3f2573b6 = $this->env->getExtension("native_profiler");
+        $__internal_9ab150100e7cd638ebc8339c1b7c9e862aee6695a132072b87f58d8e3f2573b6->enter($__internal_9ab150100e7cd638ebc8339c1b7c9e862aee6695a132072b87f58d8e3f2573b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig"));
 
         // line 1
         echo "   ";
@@ -43,10 +43,16 @@ class __TwigTemplate_87f580daa4e4000f7e85e7125f1021be6361bcf580799ce7c109b80cada
         echo "\">Changer mon mot de passe</a>
             </li>
             <li>
-                <a href=\"facture.php\">Mes factures</a>
+                <a href=\"";
+        // line 15
+        echo $this->env->getExtension('routing')->getPath("utilisateurprofile");
+        echo "\">Mon profile</a>
             </li>
             <li>
-                <a href=\"adresses.php\">Mes adresses</a>
+                <a href=\"";
+        // line 18
+        echo $this->env->getExtension('routing')->getPath("publierVelos_index");
+        echo "\">Mes velos</a>
             </li>
             <li>
                 <a href=\"";
@@ -57,7 +63,7 @@ class __TwigTemplate_87f580daa4e4000f7e85e7125f1021be6361bcf580799ce7c109b80cada
         </ul>
     </div>";
         
-        $__internal_1bc306c317d2fbedee509ce2fb7471c1c791d4fdbb524350edea6b84f2b1e1ae->leave($__internal_1bc306c317d2fbedee509ce2fb7471c1c791d4fdbb524350edea6b84f2b1e1ae_prof);
+        $__internal_9ab150100e7cd638ebc8339c1b7c9e862aee6695a132072b87f58d8e3f2573b6->leave($__internal_9ab150100e7cd638ebc8339c1b7c9e862aee6695a132072b87f58d8e3f2573b6_prof);
 
     }
 
@@ -73,7 +79,7 @@ class __TwigTemplate_87f580daa4e4000f7e85e7125f1021be6361bcf580799ce7c109b80cada
 
     public function getDebugInfo()
     {
-        return array (  54 => 21,  42 => 12,  36 => 9,  30 => 6,  24 => 2,  22 => 1,);
+        return array (  60 => 21,  54 => 18,  48 => 15,  42 => 12,  36 => 9,  30 => 6,  24 => 2,  22 => 1,);
     }
 }
 /*    {% trans_default_domain 'FOSUserBundle' %}*/
@@ -90,10 +96,10 @@ class __TwigTemplate_87f580daa4e4000f7e85e7125f1021be6361bcf580799ce7c109b80cada
 /*                 <a href="{{ path('fos_user_change_password') }}">Changer mon mot de passe</a>*/
 /*             </li>*/
 /*             <li>*/
-/*                 <a href="facture.php">Mes factures</a>*/
+/*                 <a href="{{ path('utilisateurprofile') }}">Mon profile</a>*/
 /*             </li>*/
 /*             <li>*/
-/*                 <a href="adresses.php">Mes adresses</a>*/
+/*                 <a href="{{ path('publierVelos_index') }}">Mes velos</a>*/
 /*             </li>*/
 /*             <li>*/
 /*                 <a href="{{ path('fos_user_security_logout') }}">deconnexion</a>*/

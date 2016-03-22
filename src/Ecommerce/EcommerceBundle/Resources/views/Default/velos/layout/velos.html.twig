@@ -1,7 +1,5 @@
 {% extends "::layout/layout.html.twig" %}
 
-
-
 {% block body %}
 <div class="container">
     <div class="row">
@@ -36,7 +34,7 @@
                 {% endfor %}
             </ul>
 
-                <div class="pagination">
+         {#   <div class="pagination">
                     <ul>
                         <li class="disabled"><span>Précédent</span></li>
                         <li class="disabled"><span>1</span></li>
@@ -47,6 +45,8 @@
                         <li><a href="#">Suivant</a></li>
                     </ul>
                 </div>
+
+         #}    
                 {% else %}
                     Aucun velos!
                     {% endif %}

@@ -1,0 +1,47 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Velos liste</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Velonom</th>
+                <th>Description</th>
+                <th>Position</th>
+                <th>Prix</th>
+                <th>Disponible</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for velo in velos %}
+            <tr>
+                <td><a href="{{ path('publierVelos_show', { 'id': velo.id }) }}">{{ velo.id }}</a></td>
+                <td>{{ velo.velonom }}</td>
+                <td>{{ velo.description }}</td>
+                <td>{{ velo.position }}</td>
+                <td>{{ velo.prix }}</td>
+                <td>{% if velo.disponible %}Oui{% else %}Non{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('publierVelos_show', { 'id': velo.id }) }}">montrer</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('publierVelos_edit', { 'id': velo.id }) }}">modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('publierVelos_new') }}">Ajouter un nouveau velo</a>
+        </li>
+    </ul>
+{% endblock %}

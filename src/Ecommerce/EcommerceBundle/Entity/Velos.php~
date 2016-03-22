@@ -38,10 +38,15 @@ class Velos
 
      /**
      * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Categories", cascade={"persist","remove"})
-     *
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs",  inversedBy="velos")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $utilisateur;
 
 
     /**
@@ -78,6 +83,8 @@ class Velos
      * @ORM\Column(name="disponible", type="boolean")
      */
     private $disponible;
+
+
 
 
     /**
@@ -203,5 +210,74 @@ class Velos
     public function getDisponible()
     {
         return $this->disponible;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Media $image
+     * @return Velos
+     */
+    public function setImage(\Ecommerce\EcommerceBundle\Entity\Media $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Ecommerce\EcommerceBundle\Entity\Media 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set tva
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Tva $tva
+     * @return Velos
+     */
+    public function setTva(\Ecommerce\EcommerceBundle\Entity\Tva $tva)
+    {
+        $this->tva = $tva;
+
+        return $this;
+    }
+
+    /**
+     * Get tva
+     *
+     * @return \Ecommerce\EcommerceBundle\Entity\Tva 
+     */
+    public function getTva()
+    {
+        return $this->tva;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Categories $categorie
+     * @return Velos
+     */
+    public function setCategorie(\Ecommerce\EcommerceBundle\Entity\Categories $categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Ecommerce\EcommerceBundle\Entity\Categories 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

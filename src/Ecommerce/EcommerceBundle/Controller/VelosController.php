@@ -5,6 +5,7 @@ namespace Ecommerce\EcommerceBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ecommerce\EcommerceBundle\Form\RechercheType;
 
+
 class VelosController extends Controller
 {
 
@@ -31,6 +32,7 @@ class VelosController extends Controller
         return $this->render('EcommerceBundle:Default:velos/layout/velos.html.twig', array('velos' => $velos,
                                                                                                                                                                                 'panier' => $panier));
     }
+
 
     public function presentationAction($id)
     {
@@ -65,7 +67,7 @@ class VelosController extends Controller
             $form->bind($this->get('request'));
             $em = $this->getDoctrine()->getManager();
             $velos = $em->getRepository('EcommerceBundle:Velos')->recherche( $form['recherche']->getData());
-    }
+         }
         else
         {
             throw $this->createNotFoundException('La page \'existe pas.');
@@ -73,4 +75,8 @@ class VelosController extends Controller
        
         return $this->render('EcommerceBundle:Default:velos/layout/velos.html.twig', array('velos' => $velos));
     }
+
+
+
+
 }

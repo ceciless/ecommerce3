@@ -6,4 +6,10 @@ routingVelos:
     resource: "@EcommerceBundle/Resources/config/routing/routingVelos.yml"
     prefix:  /
 
+routingUtilisateursProfiles:
+    resource: "@EcommerceBundle/Resources/config/routing/routingUtilisateursProfiles.yml"
+    prefix:  /utilisateurprofile
 
+routingPublierVelos:
+    resource: "@EcommerceBundle/Resources/config/routing/routingPublierVelos.yml"
+    prefix:   /publiervelos

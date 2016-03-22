@@ -22,6 +22,8 @@ class PanierController extends Controller
     }
 
 
+
+
     public function ajouterAction($id)
     {
 
@@ -50,6 +52,9 @@ class PanierController extends Controller
         return $this->redirect($this->generateUrl('panier'));
     }
 
+
+
+
     public function panierAction()
 
     {
@@ -64,19 +69,28 @@ class PanierController extends Controller
         //die();
 
         return $this->render('EcommerceBundle:Default:panier/layout/panier.html.twig', array('velos'=> $velos,
-                                                                                                                                                                                      'panier' => $session->get('panier')));
+                                                                                                                                                                    'panier' => $session->get('panier')));
     }
 
-
-    public function livraisonAction()
-    {
-        return $this->render('EcommerceBundle:Default:panier/layout/livraison.html.twig');
-    }
 
 
     public function validationAction()
     {
-        return $this->render('EcommerceBundle:Default:panier/layout/validation.html.twig');
+       // if ($this->get('request')->getMethod() == 'POST')
+       //     $this->setPanierOnSession();
+
+         $session = $this->getRequest() -> getSession();
+        //$session->remove('panier');
+        //die();
+        if (!$session->has('panier'))  
+            $session-> set('panier',array());
+        $em= $this->getDoctrine()->getManager();
+        $velos=$em->getRepository('EcommerceBundle:Velos')->findArray(array_keys($session->get('panier')));
+        //var_dump($session->get('panier'));
+        //die();
+
+        return $this->render('EcommerceBundle:Default:panier/layout/validation.html.twig',array('velos'=> $velos,
+                                                                                                                                                                         'panier' => $session->get('panier')));
     }
 
 }

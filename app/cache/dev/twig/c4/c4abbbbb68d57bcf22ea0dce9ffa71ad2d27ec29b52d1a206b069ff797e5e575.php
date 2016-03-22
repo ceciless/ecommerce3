@@ -21,8 +21,8 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_64934652ec0738db3f711531bcdec88aa1066576486b751d80e293a41fbf67d1 = $this->env->getExtension("native_profiler");
-        $__internal_64934652ec0738db3f711531bcdec88aa1066576486b751d80e293a41fbf67d1->enter($__internal_64934652ec0738db3f711531bcdec88aa1066576486b751d80e293a41fbf67d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "EcommerceBundle:Default:panier/layout/panier.html.twig"));
+        $__internal_b8aaf0f89c4b1a184d3a917173c89fa1aef7300b5bfe61b1ad3b05f0630e12db = $this->env->getExtension("native_profiler");
+        $__internal_b8aaf0f89c4b1a184d3a917173c89fa1aef7300b5bfe61b1ad3b05f0630e12db->enter($__internal_b8aaf0f89c4b1a184d3a917173c89fa1aef7300b5bfe61b1ad3b05f0630e12db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "EcommerceBundle:Default:panier/layout/panier.html.twig"));
 
         // line 4
         $context["totalHT"] = 0;
@@ -30,11 +30,11 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
         $context["totalTTC"] = 0;
         // line 6
         $context["refTva"] = array();
-        // line 7
+        // line 8
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["velos"]) ? $context["velos"] : $this->getContext($context, "velos")));
         foreach ($context['_seq'] as $context["_key"] => $context["velo"]) {
-            // line 8
+            // line 9
             $context["refTva"] = twig_array_merge((isset($context["refTva"]) ? $context["refTva"] : $this->getContext($context, "refTva")), array(("%" . $this->getAttribute($this->getAttribute($context["velo"], "tva", array()), "valeur", array())) => 0));
         }
         $_parent = $context['_parent'];
@@ -43,38 +43,53 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
         // line 2
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_64934652ec0738db3f711531bcdec88aa1066576486b751d80e293a41fbf67d1->leave($__internal_64934652ec0738db3f711531bcdec88aa1066576486b751d80e293a41fbf67d1_prof);
+        $__internal_b8aaf0f89c4b1a184d3a917173c89fa1aef7300b5bfe61b1ad3b05f0630e12db->leave($__internal_b8aaf0f89c4b1a184d3a917173c89fa1aef7300b5bfe61b1ad3b05f0630e12db_prof);
 
     }
 
-    // line 11
+    // line 12
     public function block_body($context, array $blocks = array())
     {
-        $__internal_aef2e15d0b7949eabed41de441ee766e95635855d82d55d8263b84f76b17810f = $this->env->getExtension("native_profiler");
-        $__internal_aef2e15d0b7949eabed41de441ee766e95635855d82d55d8263b84f76b17810f->enter($__internal_aef2e15d0b7949eabed41de441ee766e95635855d82d55d8263b84f76b17810f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3e2a0986589974eb3a33500c459f8ae2fd0b3e249354e035c4ae77c7347c965d = $this->env->getExtension("native_profiler");
+        $__internal_3e2a0986589974eb3a33500c459f8ae2fd0b3e249354e035c4ae77c7347c965d->enter($__internal_3e2a0986589974eb3a33500c459f8ae2fd0b3e249354e035c4ae77c7347c965d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 12
+        // line 13
         echo "    <div class=\"container\">
         <div class=\"row\">
 
             <div class=\"span3\">
                 ";
-        // line 16
-        $this->loadTemplate("::modulesUsed/navigation.html.twig", "EcommerceBundle:Default:panier/layout/panier.html.twig", 16)->display($context);
         // line 17
+        $this->loadTemplate("::modulesUsed/navigation.html.twig", "EcommerceBundle:Default:panier/layout/panier.html.twig", 17)->display($context);
+        // line 18
+        echo "                ";
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 19
+            echo "                        ";
+            $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig", "EcommerceBundle:Default:panier/layout/panier.html.twig", 19)->display($context);
+            // line 20
+            echo "                ";
+        } else {
+            // line 21
+            echo "                        ";
+            $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig", "EcommerceBundle:Default:panier/layout/panier.html.twig", 21)->display($context);
+            // line 22
+            echo "                ";
+        }
+        // line 23
         echo "            </div>
 
             <div class=\"span9\">
 
                 ";
-        // line 21
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 22
+            // line 28
             echo "                    <div class=\"alert alert-success\">
                         ";
-            // line 23
+            // line 29
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
                     </div>
@@ -83,7 +98,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 32
         echo "
                 <h2>Votre panier</h2>
                     <table class=\"table table-striped table-hover\">
@@ -97,39 +112,39 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
                         </thead>
                         <tbody>
                         ";
-        // line 38
+        // line 44
         if ((twig_length_filter($this->env, (isset($context["velos"]) ? $context["velos"] : $this->getContext($context, "velos"))) == 0)) {
-            // line 39
+            // line 45
             echo "                            <tr>
                                 <td colspan=\"4\"><center>Aucun velos choisi </center></td>
                             </tr>
                         ";
         }
-        // line 43
+        // line 49
         echo "
                         ";
-        // line 44
+        // line 50
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["velos"]) ? $context["velos"] : $this->getContext($context, "velos")));
         foreach ($context['_seq'] as $context["_key"] => $context["velo"]) {
-            // line 45
+            // line 51
             echo "                        <tr>
                             <form action=\"";
-            // line 46
+            // line 52
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajouter", array("id" => $this->getAttribute($context["velo"], "id", array()))), "html", null, true);
             echo "\" method=\"get\">
                                 <td>";
-            // line 47
+            // line 53
             echo twig_escape_filter($this->env, $this->getAttribute($context["velo"], "velonom", array()), "html", null, true);
             echo "</td>
                                 <td>
                                     <select name=\"qte\" class=\"span1\" onChange=\"this.form.submit()\">
                                             ";
-            // line 50
+            // line 56
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(range(1, 15));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 51
+                // line 57
                 echo "                                                    <option value=\"";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                 echo "\" ";
@@ -144,64 +159,64 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 53
-            echo "                                    </select>jours 
+            // line 59
+            echo "                                    </select> jours 
                                     <a href=\"";
-            // line 54
+            // line 60
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("supprimer", array("id" => $this->getAttribute($context["velo"], "id", array()))), "html", null, true);
             echo "\"><i class=\"icon-trash\"></i></a>
                                 </td>
                                 <td>";
-            // line 56
+            // line 62
             echo twig_escape_filter($this->env, $this->getAttribute($context["velo"], "prix", array()), "html", null, true);
             echo " €/jour</td>
                                 <td>";
-            // line 57
+            // line 63
             echo twig_escape_filter($this->env, ($this->getAttribute($context["velo"], "prix", array()) * $this->getAttribute((isset($context["panier"]) ? $context["panier"] : $this->getContext($context, "panier")), $this->getAttribute($context["velo"], "id", array()), array(), "array")), "html", null, true);
             echo "€</td>
                             </form>
                         </tr>
                         ";
-            // line 60
+            // line 66
             $context["totalHT"] = ((isset($context["totalHT"]) ? $context["totalHT"] : $this->getContext($context, "totalHT")) + ($this->getAttribute($context["velo"], "prix", array()) * $this->getAttribute((isset($context["panier"]) ? $context["panier"] : $this->getContext($context, "panier")), $this->getAttribute($context["velo"], "id", array()), array(), "array")));
-            // line 61
+            // line 67
             echo "                        ";
             $context["totalTTC"] = ((isset($context["totalTTC"]) ? $context["totalTTC"] : $this->getContext($context, "totalTTC")) + $this->env->getExtension('tva_extension')->calculTva(($this->getAttribute($context["velo"], "prix", array()) * $this->getAttribute((isset($context["panier"]) ? $context["panier"] : $this->getContext($context, "panier")), $this->getAttribute($context["velo"], "id", array()), array(), "array")), $this->getAttribute($this->getAttribute($context["velo"], "tva", array()), "multiplicate", array())));
-            // line 62
+            // line 68
             echo "                        ";
             $context["refTva"] = twig_array_merge((isset($context["refTva"]) ? $context["refTva"] : $this->getContext($context, "refTva")), array(("%" . $this->getAttribute($this->getAttribute($context["velo"], "tva", array()), "valeur", array())) => ($this->getAttribute((isset($context["refTva"]) ? $context["refTva"] : $this->getContext($context, "refTva")), ("%" . $this->getAttribute($this->getAttribute($context["velo"], "tva", array()), "valeur", array())), array(), "array") + $this->env->getExtension('montant_tva_extension')->montantTva(($this->getAttribute($context["velo"], "prix", array()) * $this->getAttribute((isset($context["panier"]) ? $context["panier"] : $this->getContext($context, "panier")), $this->getAttribute($context["velo"], "id", array()), array(), "array")), $this->getAttribute($this->getAttribute($context["velo"], "tva", array()), "multiplicate", array())))));
-            // line 63
+            // line 69
             echo "                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['velo'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 70
         echo "                        </tbody>
                     </table>
                 </form>
                 ";
-        // line 67
+        // line 73
         if ((twig_length_filter($this->env, (isset($context["velos"]) ? $context["velos"] : $this->getContext($context, "velos"))) != 0)) {
-            // line 68
+            // line 74
             echo "                <dl class=\"dl-horizontal pull-right\">
                     <dt>Total HT :</dt>
                     <dd>";
-            // line 70
+            // line 76
             echo twig_escape_filter($this->env, (isset($context["totalHT"]) ? $context["totalHT"] : $this->getContext($context, "totalHT")), "html", null, true);
             echo "€</dd>
 
                     ";
-            // line 72
+            // line 78
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["refTva"]) ? $context["refTva"] : $this->getContext($context, "refTva")));
             foreach ($context['_seq'] as $context["key"] => $context["tva"]) {
-                // line 73
+                // line 79
                 echo "                        <dt>TVA ";
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo " :</dt>
                         <dd>";
-                // line 74
+                // line 80
                 echo twig_escape_filter($this->env, $context["tva"], "html", null, true);
                 echo "€</dd>
                     ";
@@ -209,19 +224,22 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['tva'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 76
+            // line 82
             echo "
                     <dt>Total:</dt>
                     <dd>";
-            // line 78
+            // line 84
             echo twig_escape_filter($this->env, (isset($context["totalTTC"]) ? $context["totalTTC"] : $this->getContext($context, "totalTTC")), "html", null, true);
             echo "€</dd>
                 </dl>
                 <div class=\"clearfix\"></div>
-                <a href=\"livraison.php\" class=\"btn btn-success pull-right\">Valider mon panier</a>
+               <a href=\"";
+            // line 87
+            echo $this->env->getExtension('routing')->getPath("validation");
+            echo "\" class=\"btn btn-success pull-right\">Valider mon panier</a> 
                 ";
         }
-        // line 83
+        // line 89
         echo "                <a href=\"";
         echo $this->env->getExtension('routing')->getPath("velos");
         echo "\" class=\"btn btn-primary\">Continuer mes achats</a>
@@ -232,7 +250,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 
 ";
         
-        $__internal_aef2e15d0b7949eabed41de441ee766e95635855d82d55d8263b84f76b17810f->leave($__internal_aef2e15d0b7949eabed41de441ee766e95635855d82d55d8263b84f76b17810f_prof);
+        $__internal_3e2a0986589974eb3a33500c459f8ae2fd0b3e249354e035c4ae77c7347c965d->leave($__internal_3e2a0986589974eb3a33500c459f8ae2fd0b3e249354e035c4ae77c7347c965d_prof);
 
     }
 
@@ -248,7 +266,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 
     public function getDebugInfo()
     {
-        return array (  225 => 83,  217 => 78,  213 => 76,  205 => 74,  200 => 73,  196 => 72,  191 => 70,  187 => 68,  185 => 67,  180 => 64,  174 => 63,  171 => 62,  168 => 61,  166 => 60,  160 => 57,  156 => 56,  151 => 54,  148 => 53,  133 => 51,  129 => 50,  123 => 47,  119 => 46,  116 => 45,  112 => 44,  109 => 43,  103 => 39,  101 => 38,  87 => 26,  78 => 23,  75 => 22,  71 => 21,  65 => 17,  63 => 16,  57 => 12,  51 => 11,  44 => 2,  38 => 8,  34 => 7,  32 => 6,  30 => 5,  28 => 4,  11 => 2,);
+        return array (  243 => 89,  238 => 87,  232 => 84,  228 => 82,  220 => 80,  215 => 79,  211 => 78,  206 => 76,  202 => 74,  200 => 73,  195 => 70,  189 => 69,  186 => 68,  183 => 67,  181 => 66,  175 => 63,  171 => 62,  166 => 60,  163 => 59,  148 => 57,  144 => 56,  138 => 53,  134 => 52,  131 => 51,  127 => 50,  124 => 49,  118 => 45,  116 => 44,  102 => 32,  93 => 29,  90 => 28,  86 => 27,  80 => 23,  77 => 22,  74 => 21,  71 => 20,  68 => 19,  65 => 18,  63 => 17,  57 => 13,  51 => 12,  44 => 2,  38 => 9,  34 => 8,  32 => 6,  30 => 5,  28 => 4,  11 => 2,);
     }
 }
 /* */
@@ -257,6 +275,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 /* {% set totalHT = 0 %}*/
 /* {% set totalTTC = 0 %}*/
 /* {% set refTva = {} %}*/
+/* */
 /* {% for velo in velos %}*/
 /*         {% set refTva = refTva | merge({ ('%' ~ velo.tva.valeur) : 0}) %}*/
 /* {% endfor %}*/
@@ -267,6 +286,11 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 /* */
 /*             <div class="span3">*/
 /*                 {% include '::modulesUsed/navigation.html.twig' %}*/
+/*                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}*/
+/*                         {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}*/
+/*                 {% else %}*/
+/*                         {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}*/
+/*                 {% endif %}*/
 /*             </div>*/
 /* */
 /*             <div class="span9">*/
@@ -303,7 +327,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 /*                                             {% for i in 1..15 %}*/
 /*                                                     <option value="{{ i }}" {% if i == panier[velo.id] %} selected="selected" {% endif %}> {{ i }} </option>*/
 /*                                             {% endfor %}*/
-/*                                     </select>jours */
+/*                                     </select> jours */
 /*                                     <a href="{{ path('supprimer', {'id':velo.id})}}"><i class="icon-trash"></i></a>*/
 /*                                 </td>*/
 /*                                 <td>{{ velo.prix }} €/jour</td>*/
@@ -313,7 +337,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 /*                         {% set totalHT = totalHT + ( velo.prix * panier[velo.id]) %}*/
 /*                         {% set totalTTC = totalTTC + ( velo.prix * panier[velo.id]) | tva( velo.tva.multiplicate) %}*/
 /*                         {% set refTva = refTva | merge({ ('%' ~ velo.tva.valeur) : refTva['%' ~ velo.tva.valeur] + ( velo.prix * panier[velo.id]) | montantTva( velo.tva.multiplicate) })  %}*/
-/*                         {% endfor%}*/
+/*                         {% endfor %}*/
 /*                         </tbody>*/
 /*                     </table>*/
 /*                 </form>*/
@@ -331,7 +355,7 @@ class __TwigTemplate_d5caf07bcf155c1527b6e25bd74fbc312368c762617b93c413eb2a5e264
 /*                     <dd>{{ totalTTC }}€</dd>*/
 /*                 </dl>*/
 /*                 <div class="clearfix"></div>*/
-/*                 <a href="livraison.php" class="btn btn-success pull-right">Valider mon panier</a>*/
+/*                <a href="{{ path('validation') }}" class="btn btn-success pull-right">Valider mon panier</a> */
 /*                 {% endif %}*/
 /*                 <a href="{{ path('velos') }}" class="btn btn-primary">Continuer mes achats</a>*/
 /*             </div>*/

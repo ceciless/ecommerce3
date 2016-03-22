@@ -21,89 +21,89 @@ class __TwigTemplate_0508a861edbaf2ee35b3824512bea8ec0677943de989e0a885361b9b5c1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f91afbcea50af4eb3ca12475714cda1f85c3e68337cfdf4942afdf1dbdf1c0b8 = $this->env->getExtension("native_profiler");
-        $__internal_f91afbcea50af4eb3ca12475714cda1f85c3e68337cfdf4942afdf1dbdf1c0b8->enter($__internal_f91afbcea50af4eb3ca12475714cda1f85c3e68337cfdf4942afdf1dbdf1c0b8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "EcommerceBundle:Default:velos/layout/velos.html.twig"));
+        $__internal_ded0dda337d1eee51b38d66521625863988e0dd3ce3cf5c19dbe6eb7032d3583 = $this->env->getExtension("native_profiler");
+        $__internal_ded0dda337d1eee51b38d66521625863988e0dd3ce3cf5c19dbe6eb7032d3583->enter($__internal_ded0dda337d1eee51b38d66521625863988e0dd3ce3cf5c19dbe6eb7032d3583_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "EcommerceBundle:Default:velos/layout/velos.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f91afbcea50af4eb3ca12475714cda1f85c3e68337cfdf4942afdf1dbdf1c0b8->leave($__internal_f91afbcea50af4eb3ca12475714cda1f85c3e68337cfdf4942afdf1dbdf1c0b8_prof);
+        $__internal_ded0dda337d1eee51b38d66521625863988e0dd3ce3cf5c19dbe6eb7032d3583->leave($__internal_ded0dda337d1eee51b38d66521625863988e0dd3ce3cf5c19dbe6eb7032d3583_prof);
 
     }
 
-    // line 5
+    // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f3f011b32710b1ad4e7e3385647aec65cd1bc62852cf87a1c2657d29d51ff15b = $this->env->getExtension("native_profiler");
-        $__internal_f3f011b32710b1ad4e7e3385647aec65cd1bc62852cf87a1c2657d29d51ff15b->enter($__internal_f3f011b32710b1ad4e7e3385647aec65cd1bc62852cf87a1c2657d29d51ff15b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7ece37384c7e44ed95fc901d6e372004f278a0d2fc673d3582321b1ad8561311 = $this->env->getExtension("native_profiler");
+        $__internal_7ece37384c7e44ed95fc901d6e372004f278a0d2fc673d3582321b1ad8561311->enter($__internal_7ece37384c7e44ed95fc901d6e372004f278a0d2fc673d3582321b1ad8561311_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 4
         echo "<div class=\"container\">
     <div class=\"row\">
 
         <div class=\"span3\">
             ";
-        // line 10
-        $this->loadTemplate("::modulesUsed/navigation.html.twig", "EcommerceBundle:Default:velos/layout/velos.html.twig", 10)->display($context);
-        // line 11
+        // line 8
+        $this->loadTemplate("::modulesUsed/navigation.html.twig", "EcommerceBundle:Default:velos/layout/velos.html.twig", 8)->display($context);
+        // line 9
         echo "            ";
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 12
+            // line 10
             echo "                    ";
-            $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig", "EcommerceBundle:Default:velos/layout/velos.html.twig", 12)->display($context);
-            // line 13
+            $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig", "EcommerceBundle:Default:velos/layout/velos.html.twig", 10)->display($context);
+            // line 11
             echo "            ";
         } else {
-            // line 14
+            // line 12
             echo "                    ";
-            $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig", "EcommerceBundle:Default:velos/layout/velos.html.twig", 14)->display($context);
-            // line 15
+            $this->loadTemplate("UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig", "EcommerceBundle:Default:velos/layout/velos.html.twig", 12)->display($context);
+            // line 13
             echo "            ";
         }
-        // line 16
+        // line 14
         echo "        </div>
 
         <div class=\"span9\">
         ";
-        // line 19
+        // line 17
         if ((twig_length_filter($this->env, (isset($context["velos"]) ? $context["velos"] : $this->getContext($context, "velos"))) != 0)) {
-            // line 20
+            // line 18
             echo "
             <ul class=\"thumbnails\">
                 ";
-            // line 22
+            // line 20
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["velos"]) ? $context["velos"] : $this->getContext($context, "velos")));
             foreach ($context['_seq'] as $context["_key"] => $context["velo"]) {
-                // line 23
+                // line 21
                 echo "                    <li class=\"span3\">
                         <div class=\"thumbnail\">
                             <img src=\"";
-                // line 25
+                // line 23
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["velo"], "image", array()), "path", array()), "html", null, true);
                 echo "\"  width=\"300\" height=\"200\">
                             <div class=\"caption\">
                                 <h4>";
-                // line 27
+                // line 25
                 echo twig_escape_filter($this->env, $this->getAttribute($context["velo"], "velonom", array()), "html", null, true);
                 echo "</h4>
                                 <p>";
-                // line 28
+                // line 26
                 echo twig_escape_filter($this->env, $this->env->getExtension('tva_extension')->calculTva($this->getAttribute($context["velo"], "prix", array()), $this->getAttribute($this->getAttribute($context["velo"], "tva", array()), "multiplicate", array())), "html", null, true);
                 echo "€/jour</p>
                                 <a class=\"btn btn-primary\" href=\"";
-                // line 29
+                // line 27
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("presentation", array("id" => $this->getAttribute($context["velo"], "id", array()))), "html", null, true);
                 echo "\">Plus d'infos</a>
                                 ";
-                // line 30
+                // line 28
                 if ( !$this->getAttribute((isset($context["panier"]) ? $context["panier"] : null), $this->getAttribute($context["velo"], "id", array()), array(), "array", true, true)) {
-                    // line 31
+                    // line 29
                     echo "                                    <a class=\"btn btn-success\" href=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajouter", array("id" => $this->getAttribute($context["velo"], "id", array()))), "html", null, true);
                     echo "\">Réserver </a>
                                 ";
                 }
-                // line 33
+                // line 31
                 echo "                            </div>
                         </div>
                     </li>
@@ -112,20 +112,12 @@ class __TwigTemplate_0508a861edbaf2ee35b3824512bea8ec0677943de989e0a885361b9b5c1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['velo'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 37
+            // line 35
             echo "            </ul>
 
-                <div class=\"pagination\">
-                    <ul>
-                        <li class=\"disabled\"><span>Précédent</span></li>
-                        <li class=\"disabled\"><span>1</span></li>
-                        <li><a href=\"#\">2</a></li>
-                        <li><a href=\"#\">3</a></li>
-                        <li><a href=\"#\">4</a></li>
-                        <li><a href=\"#\">5</a></li>
-                        <li><a href=\"#\">Suivant</a></li>
-                    </ul>
-                </div>
+         ";
+            // line 49
+            echo "    
                 ";
         } else {
             // line 51
@@ -140,7 +132,7 @@ class __TwigTemplate_0508a861edbaf2ee35b3824512bea8ec0677943de989e0a885361b9b5c1
 </div>
 ";
         
-        $__internal_f3f011b32710b1ad4e7e3385647aec65cd1bc62852cf87a1c2657d29d51ff15b->leave($__internal_f3f011b32710b1ad4e7e3385647aec65cd1bc62852cf87a1c2657d29d51ff15b_prof);
+        $__internal_7ece37384c7e44ed95fc901d6e372004f278a0d2fc673d3582321b1ad8561311->leave($__internal_7ece37384c7e44ed95fc901d6e372004f278a0d2fc673d3582321b1ad8561311_prof);
 
     }
 
@@ -156,12 +148,10 @@ class __TwigTemplate_0508a861edbaf2ee35b3824512bea8ec0677943de989e0a885361b9b5c1
 
     public function getDebugInfo()
     {
-        return array (  136 => 53,  132 => 51,  116 => 37,  107 => 33,  101 => 31,  99 => 30,  95 => 29,  91 => 28,  87 => 27,  82 => 25,  78 => 23,  74 => 22,  70 => 20,  68 => 19,  63 => 16,  60 => 15,  57 => 14,  54 => 13,  51 => 12,  48 => 11,  46 => 10,  40 => 6,  34 => 5,  11 => 1,);
+        return array (  128 => 53,  124 => 51,  120 => 49,  116 => 35,  107 => 31,  101 => 29,  99 => 28,  95 => 27,  91 => 26,  87 => 25,  82 => 23,  78 => 21,  74 => 20,  70 => 18,  68 => 17,  63 => 14,  60 => 13,  57 => 12,  54 => 11,  51 => 10,  48 => 9,  46 => 8,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends "::layout/layout.html.twig" %}*/
-/* */
-/* */
 /* */
 /* {% block body %}*/
 /* <div class="container">*/
@@ -197,7 +187,7 @@ class __TwigTemplate_0508a861edbaf2ee35b3824512bea8ec0677943de989e0a885361b9b5c1
 /*                 {% endfor %}*/
 /*             </ul>*/
 /* */
-/*                 <div class="pagination">*/
+/*          {#   <div class="pagination">*/
 /*                     <ul>*/
 /*                         <li class="disabled"><span>Précédent</span></li>*/
 /*                         <li class="disabled"><span>1</span></li>*/
@@ -208,6 +198,8 @@ class __TwigTemplate_0508a861edbaf2ee35b3824512bea8ec0677943de989e0a885361b9b5c1
 /*                         <li><a href="#">Suivant</a></li>*/
 /*                     </ul>*/
 /*                 </div>*/
+/* */
+/*          #}    */
 /*                 {% else %}*/
 /*                     Aucun velos!*/
 /*                     {% endif %}*/

@@ -30,18 +30,23 @@ class Velos
 
 
      /**
-     * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Tva", cascade={"persist","remove"})
+     * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Tva", cascade={"persist"})
      *
      * @ORM\JoinColumn(nullable=false)
      */
     private $tva;
 
      /**
-     * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Categories", cascade={"persist","remove"})
-     *
+     * @ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Categories", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Utilisateurs\UtilisateursBundle\Entity\Utilisateurs",  inversedBy="velos")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $utilisateur;
 
 
     /**
@@ -78,6 +83,8 @@ class Velos
      * @ORM\Column(name="disponible", type="boolean")
      */
     private $disponible;
+
+
 
 
     /**
@@ -273,4 +280,29 @@ class Velos
     {
         return $this->categorie;
     }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \Utilisateurs\UtilisateursBundle\Entity\Utilisateurs $utilisateur
+     * @return Velos
+     */
+    public function setUtilisateur(\Utilisateurs\UtilisateursBundle\Entity\Utilisateurs $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \Utilisateurs\UtilisateursBundle\Entity\Utilisateurs 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+
 }

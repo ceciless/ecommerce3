@@ -24,6 +24,7 @@ class Utilisateurs extends BaseUser
         parent::__construct();
         $this -> reserver = new \Doctrine\Common\Collections\ArrayCollection();
         $this -> profiles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this -> velos = new \Doctrine\Common\Collections\ArrayCollection();
         // your own logic
     }
 
@@ -32,6 +33,12 @@ class Utilisateurs extends BaseUser
      * @ORM\JoinColumn(nullable=true)
      */
     private $reserver;
+
+     /**
+     * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\Velos",  mappedBy="utilisateur", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $velos;
 
     /**
      * @ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\UtilisateursProfiles",  mappedBy="utilisateur", cascade={"remove"})
@@ -105,5 +112,38 @@ class Utilisateurs extends BaseUser
     public function getProfiles()
     {
         return $this->profiles;
+    }
+
+    /**
+     * Add velos
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Velos $velos
+     * @return Utilisateurs
+     */
+    public function addVelo(\Ecommerce\EcommerceBundle\Entity\Velos $velos)
+    {
+        $this->velos[] = $velos;
+
+        return $this;
+    }
+
+    /**
+     * Remove velos
+     *
+     * @param \Ecommerce\EcommerceBundle\Entity\Velos $velos
+     */
+    public function removeVelo(\Ecommerce\EcommerceBundle\Entity\Velos $velos)
+    {
+        $this->velos->removeElement($velos);
+    }
+
+    /**
+     * Get velos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVelos()
+    {
+        return $this->velos;
     }
 }

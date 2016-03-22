@@ -1,0 +1,10 @@
+utilisateurprofile:
+    path:     /
+    defaults: { _controller: EcommerceBundle:UtilisateursProfiles:utilisateurprofile}
+
+
+profilesuppression:
+    path:     /suppression/{id}
+    defaults: { _controller: EcommerceBundle:UtilisateursProfiles:profilesuppression}
+
+
